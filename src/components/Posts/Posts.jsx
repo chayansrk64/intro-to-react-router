@@ -4,7 +4,7 @@ import Post from '../Post/Post';
 
 const Posts = ({postsPromise}) => {
     const postsData = use(postsPromise);
-    console.log("Posts Data =>",postsData);
+    // console.log("Posts Data =>",postsData);
     const postsStyles = {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
