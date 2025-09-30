@@ -1,16 +1,18 @@
 import React, { Suspense, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import ShowUserInfo from './ShowUserInfo';
 
 
 
 const User = ({user}) => {
-
     const [showInfo, setShowInfo] = useState(false);
 
     const {id, name, phone, username, website} = user;
     
     const userPromise = fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then(res => res.json());
+
+    const location = useLocation()
+    console.log(location);
 
     return (
         <div style={{border: '1px solid yellow', borderRadius: '10px'}}>
