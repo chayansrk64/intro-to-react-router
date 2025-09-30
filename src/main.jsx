@@ -51,6 +51,10 @@ const router = createBrowserRouter([
       }
      
     ]
+  },
+  {
+    path: "*",
+    element: <h2>404 NoT FoUnD!</h2>
   }
  
 ])

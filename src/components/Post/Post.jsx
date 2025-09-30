@@ -1,15 +1,27 @@
 import React, { Suspense, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, Navigate } from 'react-router';
 import ShowPostDetails from './ShowPostDetails';
 
 const Post = ({post}) => {
 
     const [showDetails, setShowDetails] = useState(false)
+    const [visitHome, setVisitHome] = useState(false)
+
+    
 
     const {id, title} = post
 
 
     const postPromise = fetch(`https://jsonplaceholder.typicode.com/posts/${id}`).then(res => res.json())
+
+
+    if(visitHome){
+        return <Navigate to="/"></Navigate>
+    }
+
+    
+
+   
 
     return (
         <div style={{border: '2px solid green', borderRadius: '10px'}}>
@@ -27,6 +39,9 @@ const Post = ({post}) => {
                             <ShowPostDetails postPromise={postPromise}></ShowPostDetails>
                         </Suspense>
         }
+
+
+        <button onClick={() => setVisitHome(true)}>Visit Home</button>
         
 
 
