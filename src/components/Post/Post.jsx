@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import { Link, Navigate, useLocation } from 'react-router';
+import { Link, Navigate } from 'react-router';
 import ShowPostDetails from './ShowPostDetails';
 
 const Post = ({post}) => {
